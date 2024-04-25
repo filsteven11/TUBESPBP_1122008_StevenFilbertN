@@ -1,0 +1,382 @@
+{
+	"info": {
+		"_postman_id": "18aeb6d3-a682-4601-80bf-2fd559bce21d",
+		"name": "Tokopedia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "32417272",
+		"_collection_link": "https://www.postman.com/maintenance-engineer-10689906/workspace/tubespbp/collection/32417272-18aeb6d3-a682-4601-80bf-2fd559bce21d?action=share&source=collection_link&creator=32417272"
+	},
+	"item": [
+		{
+			"name": "Beranda",
+			"item": [
+				{
+					"name": "Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "",
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "- GET `https://tokopedia.coms/v1/products`\n    \n\n<img src=\"https://content.pstmn.io/73186454-6bf6-4da5-a590-2f17e98b9f09/aW1hZ2UucG5n\" width=\"940\" height=\"452\">"
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": []
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n  \"status\": \"success\",\r\n  \"message\": \"Produk ada !\",\r\n  \"data\": {\r\n    \"id\": \"123\",\r\n    \"nama\": \"Jam\",\r\n  }\r\n}\r\n\r\n"
+						},
+						{
+							"name": "Failed",
+							"originalRequest": {
+								"method": "GET",
+								"header": []
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n  \"status\": 500,\r\n  \"message\": \"Server Errors \"\r\n}\r\n"
+						},
+						{
+							"name": "NotFound",
+							"originalRequest": {
+								"method": "GET",
+								"header": []
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n  \"status\": 404,\r\n  \"message\": \"Not Found: The requested resources doesn't exist\"\r\n}\r\n\r\n"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "DetailProduk",
+			"item": [
+				{
+					"name": "DetailProd",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "- `GET` `https://Tokopedia.com/v1/products/{product_id}`\n    \n\n<img src=\"https://content.pstmn.io/8449ae94-821b-4e5f-af59-7c3268f8206d/aW1hZ2UucG5n\" alt=\"\" height=\"434\" width=\"940\">"
+					},
+					"response": [
+						{
+							"name": "Succes",
+							"originalRequest": {
+								"method": "GET",
+								"header": []
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Detail produk berhasil ditemukan\",\n    \"data\": {\n        \"product_id\": \"1234\",\n        \"name\": \"Sepatu\",\n        \"price\": 100000,\n        \"description\": \"Sepatu snikers kekinian dari NIKE\"\n    }\n}"
+						},
+						{
+							"name": "Failed",
+							"originalRequest": {
+								"method": "GET",
+								"header": []
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": 500,\n  \"message\": \"Terjadi kesalahan pada server saat mengambil detail produk\"\n}\n"
+						},
+						{
+							"name": "NotFound",
+							"originalRequest": {
+								"method": "GET",
+								"header": []
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": 404,\n  \"message\": \"Produk dengan ID yang diberikan tidak ditemukan\"\n}\n"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "KeranjangBelanja",
+			"item": [
+				{
+					"name": "DeleteProdkeranjang",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"description": "- `DEL https://tokopedia.com/v1/carts/1/items/1`\n    \n\n<img src=\"https://content.pstmn.io/66379cff-165b-4796-b199-8f77e6d3bb22/aW1hZ2UucG5n\" width=\"940\" height=\"218\">"
+					},
+					"response": [
+						{
+							"name": "Succes",
+							"originalRequest": {
+								"method": "GET",
+								"header": []
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": 200,\n  \"product_id \":987465,\n  \"nama \":\"Jam pasir\",\n  \"message\": \"Item  dihapus dari keranjang belanja \"\n}\n"
+						},
+						{
+							"name": "Failed",
+							"originalRequest": {
+								"method": "GET",
+								"header": []
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": 500,\n  \"message\": \"Terjadi kesalahan pada server saat menghapus item dari keranjang belanja\"\n}\n\n"
+						},
+						{
+							"name": "NotFound",
+							"originalRequest": {
+								"method": "GET",
+								"header": []
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": 404,\n  \"message\": \"Tidak ada item didalam keranjang anda\"\n}\n \n"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "PencarianProduk",
+			"item": [
+				{
+					"name": "SearchProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "",
+						"description": "- `POST https://Tokopedia.com /v1/products/search`  \n    Mencari product bedasarkan kata yang di input pengguna\n    \n\n<img src=\"https://content.pstmn.io/62d33c4b-c098-47e3-9e93-fb9bea0c9ae1/aW1hZ2UucG5n\" alt=\"\" height=\"423\" width=\"940\"><img src=\"https://content.pstmn.io/c30cc9de-6883-42d2-88ed-12088519b344/aW1hZ2UucG5n\" alt=\"\" height=\"423\" width=\"940\">"
+					},
+					"response": [
+						{
+							"name": "Succes",
+							"originalRequest": {
+								"method": "GET",
+								"header": []
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n  \"status\": 200,\r\n  \"message\": \"Pencarian produk berhasil dilakukan dan hasilnya ditemukan\",\r\n   \"search\": \"Nike\",\r\n  \"data\": [\r\n    {\r\n      \"id\": \"777777\",\r\n      \"name\": \"Nike A7\",\r\n      \"price\": 100000,\r\n      \"description\": \"Sepatu NIKE keluaran terbaru\"\r\n    },\r\n    {\r\n      \"id\": \"979797\",\r\n      \"name\": \"Nike Air Jordan\",\r\n      \"price\": 100000,\r\n      \"description\": \"Sepatu NIKE buatan Jordan\"\r\n    }\r\n  ]\r\n}\r\n"
+						},
+						{
+							"name": "Failed",
+							"originalRequest": {
+								"method": "GET",
+								"header": []
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 500,\n    \"message\": \"Terjadi kesalahan pada server saat melakukan pencarian produk\"\n}"
+						},
+						{
+							"name": "NotFound",
+							"originalRequest": {
+								"method": "GET",
+								"header": []
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"Tidak ada produk yang ditemukan berdasarkan kata kunci yang dimasukkan oleh pengguna\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Profil",
+			"item": [
+				{
+					"name": "UserProfile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "- `GET https://Tokopedia.com/v1/user/profile`\n    \n\n<img src=\"https://content.pstmn.io/307e9c9a-59a5-48a9-9f15-0b2c3b092307/aW1hZ2UucG5n\" alt=\"\" height=\"570\" width=\"940\">"
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": []
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Informasi profil pengguna berhasil diambil\",\n    \"data\": {\n        \"user_id\": \"111\",\n        \"name\": \"Filsteven11\",\n        \"birthday\": \"06-11-2004\",\n        \"Gender\": \"Male\",\n        \"email\": \"filfil@gmail.com\",\n        \"address\": \"Jl. Dibumi, no 7777\"\n        \"noHandphone\": \"1234567890\",\n    }\n}"
+						},
+						{
+							"name": "Failed",
+							"originalRequest": {
+								"method": "GET",
+								"header": []
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": 500,\n  \"message\": \"Terjadi kesalahan pada server saat mengambil informasi profil pengguna\"\n}\n"
+						},
+						{
+							"name": "NotFound",
+							"originalRequest": {
+								"method": "GET",
+								"header": []
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": 404,\n  \"message\": \"Profil pengguna tidak ditemukan\"\n}\n"
+						}
+					]
+				}
+			]
+		}
+	]
+}
